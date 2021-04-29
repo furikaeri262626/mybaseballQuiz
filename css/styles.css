@@ -1,0 +1,119 @@
+body {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  background: rgb(237, 219, 25);
+  user-select: none;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+}
+
+h1,
+#question,
+#btn,
+#result {
+  text-align: center;
+}
+
+#question {
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#choices {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#choices > li {
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  /* padding-left: 200px; */
+
+}
+
+#choices > li:hover {
+  background: #f8f8f8;
+}
+
+#choices > li.correct {
+  background: #d4edda;
+  color: #155724;
+}
+
+#choices > li.correct::after {
+  content: '　　　　　　正解！';
+  font-weight: bold;
+}
+
+
+#choices > li.wrong {
+  background: #f8d8da;
+  color: #721c24;
+}
+
+#choices > li.wrong::after {
+  content: '　　　　　　不正解...';
+  font-weight: bold;
+}
+
+#btn,
+#result > a {
+  background: #3498db;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  margin: 20px;
+  color: #fff;
+  box-shadow: 0 4px 0 #2880b9;
+  cursor: pointer;
+}
+
+#btn.disabled { /*問題解く前のスタイル*/
+  background: #ccc;
+  box-shadow: 0 4px 0 #bbb;
+  opacity: .7;
+}
+
+#btn:active {
+  margin-top: 24px;
+  box-shadow: none;
+}
+
+#result {
+  position: absolute;
+  width: 300px;
+  background:white;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: .4s;
+}
+
+#result.hidden {
+  transform: translateY(-500px);
+}
+
+#result > p {
+  font-size: 30px;
+}
+
+#result > a {
+  display: block;
+  text-decoration: none;
+}
